@@ -1,10 +1,10 @@
 #include <iostream>
 #include <math.h>
-#include "um.h"
- 
+#include "um.cuh"
+ #include "errorCheckingMacro.cuh"
+
 // CUDA kernel to add elements of two arrays
-__global__
-void add(int n, float *x, float *y)
+__global__ void add(int n, float *x, float *y)
 {
   int index = blockIdx.x * blockDim.x + threadIdx.x;
   int stride = blockDim.x * gridDim.x;
@@ -49,8 +49,8 @@ int main(void)
   std::cout << "Max error: " << maxError << std::endl;
  
   // Free memory
-  cudaFree(x);
-  cudaFree(y);
+  // cudaFree(x);
+  // cudaFree(y);
  
   return 0;
 }

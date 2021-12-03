@@ -1,4 +1,5 @@
-#include "um.h"
+#include "um.cuh"
+#include "errorCheckingMacro.cuh"
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -29,7 +30,7 @@ int main() {
 	umObj.setReadOnlyPrefer(1, N);
 
 	umObj.setPreferAsHost(1, N);
-	
+
 	umObj.setPreferAsDevice(0, N);
 
 	kernel<<<1, N>>>(d_a);
