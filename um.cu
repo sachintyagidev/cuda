@@ -23,9 +23,14 @@ int main() {
 	float *d_a_1 = (float *)umObj.getRefrence(1);
 
 	umObj.prerfetchOnDevice(0, N);
+
 	umObj.prerfetchOnHost(1, N);
+
 	umObj.setReadOnlyPrefer(1, N);
+
 	umObj.setPreferAsHost(1, N);
+	
+	umObj.setPreferAsDevice(0, N);
 
 	kernel<<<1, N>>>(d_a);
 
