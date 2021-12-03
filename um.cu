@@ -1,5 +1,4 @@
 #include "um.cuh"
-#include "errorCheckingMacro.cuh"
 #include <stdio.h>
 #include <string>
 #include <vector>

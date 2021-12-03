@@ -1,7 +1,6 @@
 #include <iostream>
 #include <math.h>
 #include "um.cuh"
- #include "errorCheckingMacro.cuh"
 
 // CUDA kernel to add elements of two arrays
 __global__ void add(int n, float *x, float *y)
